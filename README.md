@@ -1,5 +1,5 @@
 # Web Alarm
-A simple alarm build in a web page. [Live preview here!](https://isaacamaro03.github.io/web-alarm/)
+A simple mobile style alarm build with React. [Live preview here!](https://isaacamaro03.github.io/web-alarm/)
 
 ## Summary and use-case
 
