@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+      "baseUrl": ".",
+      "jsx": "react",
+      "paths": {
+        "@web-alarm-components/*": ["src/components/*"]
+      }
+    }
+  }
