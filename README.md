@@ -1,5 +1,5 @@
 # Web Alarm
-A simple alarm build in a web page.
+A simple alarm build in a web page. [Live preview here!](https://isaacamaro03.github.io/web-alarm/)
 
 ## Summary and use-case
 
