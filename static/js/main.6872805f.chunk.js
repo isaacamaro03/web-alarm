@@ -1,0 +1,2 @@
+(this["webpackJsonpweb-alarm"]=this["webpackJsonpweb-alarm"]||[]).push([[0],{9:function(e,t,r){"use strict";r.r(t);var c=r(1),n=r.n(c),s=r(3),a=r.n(s),i=r(0);var l=function(){return Object(i.jsx)("div",{className:"App",children:Object(i.jsx)("h1",{children:"Hello world!"})})};a.a.render(Object(i.jsx)(n.a.StrictMode,{children:Object(i.jsx)(l,{})}),document.getElementById("root"))}},[[9,1,2]]]);
+//# sourceMappingURL=main.6872805f.chunk.js.map
