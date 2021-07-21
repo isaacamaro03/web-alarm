@@ -41,6 +41,11 @@
       "last 1 safari version"
     ]
   },
+  "jest": {
+    "moduleNameMapper": {
+      "^@web-alarm-components(.*)$": "<rootDir>/src/components$1"
+    }
+  },
   "devDependencies": {
     "gh-pages": "^3.2.3"
   }
