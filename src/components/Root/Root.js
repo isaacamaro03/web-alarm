@@ -1,11 +1,15 @@
+import { AlarmsProvider } from "@web-alarm-components/AlarmsContext";
+
 import { Header } from "./Header";
 import { Main } from "./Main";
 
 const Root = () => {
   return (
     <>
-      <Header />
-      <Main />
+      <AlarmsProvider>
+        <Header />
+        <Main />
+      </AlarmsProvider>
     </>
   );
 };

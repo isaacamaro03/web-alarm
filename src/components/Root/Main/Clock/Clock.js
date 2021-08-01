@@ -6,11 +6,9 @@ import { formatClockTime } from "./utils";
 const Clock = ({ startDate, onDateChange }) => {
   const currentDate = useDateForEverySecond(startDate);
 
-  useEffect(() => {
-    if (currentDate !== startDate) {
-      onDateChange && onDateChange(currentDate);
-    }
-  }, [currentDate, onDateChange]);
+  if (currentDate !== startDate) {
+    onDateChange && onDateChange(currentDate);
+  }
 
   return (
     <div>
