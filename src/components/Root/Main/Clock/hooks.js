@@ -1,9 +1,15 @@
-import dateFormat from "dateformat";
+import { useEffect, useState } from "react";
 
-const clockFormat = "h:MM:ss TT";
+function useDateForEverySecond(startDate) {
+  const [date, setDate] = useState(startDate);
 
-function formatClockTime(date) {
-  return dateFormat(date, clockFormat);
+  useEffect(() => {
+    setInterval(() => {
+      setDate(new Date());
+    }, 1000);
+  }, []);
+
+  return date;
 }
 
-export { formatClockTime };
+export { useDateForEverySecond };

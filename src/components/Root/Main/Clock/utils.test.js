@@ -1,4 +1,4 @@
-const { formatClockTime } = require("./hooks");
+const { formatClockTime } = require("./utils");
 
 describe("Clock hooks", () => {
   it("should format date correctly", () => {

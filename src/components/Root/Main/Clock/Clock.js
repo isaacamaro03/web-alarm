@@ -1,10 +1,21 @@
-import { formatClockTime } from "./hooks";
+import { useEffect } from "react";
 
-const Clock = ({ startDate }) => {
+import { useDateForEverySecond } from "./hooks";
+import { formatClockTime } from "./utils";
+
+const Clock = ({ startDate, onDateChange }) => {
+  const currentDate = useDateForEverySecond(startDate);
+
+  useEffect(() => {
+    if (currentDate !== startDate) {
+      onDateChange && onDateChange(currentDate);
+    }
+  }, [currentDate, onDateChange]);
+
   return (
     <div>
       <time data-testid="clock-time">
-        {startDate ? formatClockTime(startDate) : "00:00:00"}
+        {currentDate ? formatClockTime(currentDate) : "00:00:00"}
       </time>
     </div>
   );
