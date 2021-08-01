@@ -8,11 +8,15 @@ import { Clock } from "./Clock";
 const Main = () => {
   const [alarms, setAlarms] = useContext(AlarmsContext);
 
+  const onAddAlarmClick = () => {
+    setAlarms((prev) => [...prev, { time: new Date() }]);
+  };
+
   return (
     <main>
       <Clock startDate={new Date()} />
       <AlarmList alarms={alarms} />
-      <AddNewAlarmButton />
+      <AddNewAlarmButton onClick={onAddAlarmClick} />
     </main>
   );
 };

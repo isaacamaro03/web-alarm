@@ -1,9 +1,9 @@
 import { Fab } from "@material-ui/core";
 import { Add } from "@material-ui/icons";
 
-const AddNewAlarmButton = () => {
+const AddNewAlarmButton = ({ onClick }) => {
   return (
-    <Fab>
+    <Fab color="secondary" onClick={onClick}>
       <Add />
     </Fab>
   );
