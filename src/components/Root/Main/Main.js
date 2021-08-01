@@ -9,7 +9,7 @@ const Main = () => {
   const [alarms, setAlarms] = useContext(AlarmsContext);
 
   const onAddAlarmClick = () => {
-    setAlarms((prev) => [...prev, { time: new Date() }]);
+    setAlarms((prev) => [...prev, { time: new Date(), isActive: true }]);
   };
 
   return (
