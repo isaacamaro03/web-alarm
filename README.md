@@ -1,6 +1,10 @@
 # Web Alarm
 A simple mobile style alarm build with React. [Live preview here!](https://isaacamaro03.github.io/web-alarm/)
 
+## Objective
+
+The main ideia for the project is to learn more about testing with Jest. The Alarm itself comes afterwards.
+
 ## Summary and use-case
 
 The user can see and manage all the alarms that have been created. The user can also create, update and delete any given alarm on the list.
