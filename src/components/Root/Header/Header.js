@@ -1,20 +1,21 @@
 import { Typography, makeStyles } from "@material-ui/core";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   root: {
     fontSize: "3.75rem",
-    marginBottom: "2rem",
 
     "& > div": {
-      fontSize: "1rem",
+      fontSize: ".8rem",
+      lineHeight: 1,
 
       "& > a": {
         marginLeft: ".25rem",
         fontWeight: "500",
+        color: theme.palette.primary.dark,
       },
     },
   },
-});
+}));
 
 const Header = () => {
   const classes = useStyles();
@@ -24,7 +25,12 @@ const Header = () => {
       <Typography variant="h2">Web Alarm</Typography>
       <div>
         <span>designed by</span>
-        <a href="https://github.com/isaacamaro03" data-testid="author-link">
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://github.com/isaacamaro03"
+          data-testid="author-link"
+        >
           Isaac Amaro
         </a>
       </div>

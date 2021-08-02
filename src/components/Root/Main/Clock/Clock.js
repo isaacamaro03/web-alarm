@@ -5,10 +5,11 @@ import { formatClockTime } from "./utils";
 
 const useStyles = makeStyles({
   root: {
-    padding: "8px 0",
+    padding: ".5rem 0",
+    textAlign: "end",
 
     "& > time": {
-      fontSize: "2rem",
+      fontSize: "2.5rem",
       fontWeight: "500",
     },
   },

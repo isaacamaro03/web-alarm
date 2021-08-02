@@ -6,7 +6,7 @@ const defaultTheme = createTheme({
     MuiCssBaseline: {
       "@global": {
         body: {
-          color: "hsl(353, 11%, 31%)",
+          color: "hsl(353deg 20% 40%)",
         },
       },
     },
@@ -25,8 +25,8 @@ const defaultTheme = createTheme({
   },
   palette: {
     background: {
-      default: "#fffbfb",
-      paper: "#fffbfb",
+      default: "hsla(0, 50%, 96%, 1)",
+      paper: "hsla(0, 50%, 96%, 1)",
     },
     primary: {
       main: "hsl(354, 89%, 55%)",
