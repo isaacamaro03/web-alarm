@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack://src/App.css"],"names":[],"mappings":"AAAA,gBACI,WACJ,CAEA,kBACI,QACJ,CAEA,EACI,oBACJ","file":"main.916ab30b.chunk.css","sourcesContent":["html, body, #root {\r\n    height: 100%;\r\n}\r\n\r\nh1, h2, h3, h4, h5, h6 {\r\n    margin: 0;\r\n}\r\n\r\na {\r\n    text-decoration: none;\r\n}"]}
