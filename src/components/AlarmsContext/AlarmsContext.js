@@ -3,13 +3,15 @@ import { addAlarmsToStore, getAlarmsFromStore } from "src/utils/store";
 
 const AlarmsContext = createContext();
 
-const AlarmsProvider = ({ children }) => {
+const AlarmsProvider = ({ children, preventStoreLoading }) => {
   const [alarms, setAlarms] = useState([]);
 
   useEffect(() => {
-    const storeAlarms = getAlarmsFromStore();
-    if (storeAlarms) {
-      setAlarms(storeAlarms);
+    if (!preventStoreLoading) {
+      const storeAlarms = getAlarmsFromStore();
+      if (storeAlarms) {
+        setAlarms(storeAlarms);
+      }
     }
   }, []);
 

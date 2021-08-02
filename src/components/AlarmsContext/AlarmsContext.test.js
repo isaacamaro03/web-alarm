@@ -37,7 +37,7 @@ describe("<AlarmsContext />", () => {
     };
 
     render(
-      <AlarmsProvider>
+      <AlarmsProvider preventStoreLoading={true}>
         <Test />
       </AlarmsProvider>
     );
