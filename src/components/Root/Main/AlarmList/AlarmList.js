@@ -26,7 +26,16 @@ const AlarmList = ({ alarms }) => {
   const classes = useStyles();
 
   const EmptyListIllustration = () => {
-    return <img src="./web-alarm/clock_illustration.svg" />;
+    return (
+      <img
+        src={
+          process.env.NODE_ENV === "development"
+            ? "./web-alarm/clock_illustration.svg"
+            : "./clock_illustration.svg"
+        }
+        alt="a clock to serve as a space filler when there's no alarms configured"
+      />
+    );
   };
 
   return (
