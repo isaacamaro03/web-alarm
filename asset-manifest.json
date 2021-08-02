@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/web-alarm/static/css/main.6c0af302.chunk.css",
-    "main.js": "/web-alarm/static/js/main.fb3a795b.chunk.js",
-    "main.js.map": "/web-alarm/static/js/main.fb3a795b.chunk.js.map",
+    "main.js": "/web-alarm/static/js/main.d887455a.chunk.js",
+    "main.js.map": "/web-alarm/static/js/main.d887455a.chunk.js.map",
     "runtime-main.js": "/web-alarm/static/js/runtime-main.b63ef20d.js",
     "runtime-main.js.map": "/web-alarm/static/js/runtime-main.b63ef20d.js.map",
     "static/js/2.e42209e8.chunk.js": "/web-alarm/static/js/2.e42209e8.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.b63ef20d.js",
     "static/js/2.e42209e8.chunk.js",
     "static/css/main.6c0af302.chunk.css",
-    "static/js/main.fb3a795b.chunk.js"
+    "static/js/main.d887455a.chunk.js"
   ]
 }
