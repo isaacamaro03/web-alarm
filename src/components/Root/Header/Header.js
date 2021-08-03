@@ -1,19 +1,32 @@
 import { Typography, makeStyles } from "@material-ui/core";
 
+import { Clock } from "./Clock";
+
 const useStyles = makeStyles((theme) => ({
   root: {
-    fontSize: "3.75rem",
-
-    "& > div": {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    fontWeight: "300",
+  },
+  titleWrapper: {
+    display: "inline-block",
+    fontWeight: "500",
+  },
+  descWrapper: {
+    "& > span": {
       fontSize: ".8rem",
-      lineHeight: 1,
-
-      "& > a": {
-        marginLeft: ".25rem",
-        fontWeight: "500",
-        color: theme.palette.primary.dark,
-      },
     },
+    "& > a": {
+      fontSize: ".8rem",
+      marginLeft: ".25rem",
+      fontWeight: "bold",
+      color: theme.palette.primary.dark,
+    },
+  },
+  title: {
+    fontSize: "2rem",
+    fontWeight: "500",
   },
 }));
 
@@ -22,18 +35,23 @@ const Header = () => {
 
   return (
     <header className={classes.root}>
-      <Typography variant="h2">Web Alarm</Typography>
-      <div>
-        <span>designed by</span>
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://github.com/isaacamaro03"
-          data-testid="author-link"
-        >
-          Isaac Amaro
-        </a>
+      <div className={classes.titleWrapper}>
+        <Typography variant="h1" className={classes.title}>
+          web-alarm
+        </Typography>
+        <div className={classes.descWrapper}>
+          <span>designed by</span>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://github.com/isaacamaro03"
+            data-testid="author-link"
+          >
+            Isaac Amaro
+          </a>
+        </div>
       </div>
+      <Clock startDate={new Date()} />
     </header>
   );
 };

@@ -9,7 +9,7 @@ describe("<Header />", () => {
   it("should contain correct content", () => {
     const { getByText, getByTestId } = render(<Header />);
 
-    getByText(/^web alarm$/i);
+    getByText(/^web-alarm$/i);
     getByText(/^designed by$/i);
     getByTestId("author-link");
   });

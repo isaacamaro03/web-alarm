@@ -4,7 +4,6 @@ import { useContext } from "react";
 
 import { AddNewAlarmButton } from "./AddNewAlarmButton";
 import { AlarmList } from "./AlarmList";
-import { Clock } from "./Clock";
 
 const useStyles = makeStyles({
   root: {
@@ -24,7 +23,6 @@ const Main = () => {
 
   return (
     <main className={classes.root}>
-      <Clock startDate={new Date()} />
       <AlarmList alarms={alarms} />
       <AddNewAlarmButton onClick={onAddAlarmClick} />
     </main>
