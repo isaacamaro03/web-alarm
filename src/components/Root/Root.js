@@ -8,7 +8,7 @@ const useStyles = makeStyles({
   app: {
     display: "grid",
     gridTemplateRows: "auto minmax(0px, 1fr)",
-    gap: "2rem",
+    gap: "3rem",
     height: "100%",
     width: "444px",
     margin: "0 auto",

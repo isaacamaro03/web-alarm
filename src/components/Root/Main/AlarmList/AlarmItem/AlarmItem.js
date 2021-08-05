@@ -1,5 +1,6 @@
 import { Switch, alpha, makeStyles } from "@material-ui/core";
 import { CustomChip } from "@web-alarm-components/shared/CustomChip";
+import { getText } from "src/utils/models/repetitionModel";
 
 import { formatAlarmTime } from "./utils";
 
@@ -8,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
     padding: ".5rem",
     borderRadius: "8px",
     background: alpha(theme.palette.primary.light, 0.15),
-    boxShadow: `0 2px 1px 1px ${alpha(theme.palette.primary.light, 0.2)}`,
+    boxShadow: `-2px 3px 1px 1px ${alpha(theme.palette.primary.light, 0.2)}`,
   },
   cardTop: {
     display: "flex",
@@ -19,10 +20,16 @@ const useStyles = makeStyles((theme) => ({
       fontWeight: "500",
     },
   },
-  repetitionButtons: {
+  cardBottom: {
     display: "flex",
-    gap: "4px",
-    marginTop: "16px",
+    justifyContent: "space-between",
+
+    "& > span": {
+      fontWeight: 500,
+    },
+  },
+  moreSettingsButton: {
+    marginTop: "1.5rem",
   },
 }));
 
@@ -37,11 +44,11 @@ const AlarmItem = ({ alarmData }) => {
         </time>
         <Switch color="primary" checked={alarmData.isActive} />
       </div>
-      <div className={classes.repetitionButtons}>
-        <CustomChip selected>Once</CustomChip>
-        <CustomChip>Daily</CustomChip>
-        <CustomChip>Mon to Fri</CustomChip>
-        <CustomChip>Custom</CustomChip>
+      <div className={classes.cardBottom}>
+        <span>{getText(alarmData.repetition)}</span>
+        <CustomChip className={classes.moreSettingsButton}>
+          More settings
+        </CustomChip>
       </div>
     </div>
   );

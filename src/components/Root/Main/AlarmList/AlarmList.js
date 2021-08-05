@@ -7,7 +7,7 @@ const useStyles = makeStyles({
     display: "flex",
     flexFlow: "column",
     flex: 1,
-    marginBottom: "1rem",
+    marginBottom: "3rem",
     overflow: "auto",
 
     "& > img": {
