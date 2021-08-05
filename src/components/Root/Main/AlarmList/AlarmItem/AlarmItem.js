@@ -1,4 +1,4 @@
-import { alpha, makeStyles } from "@material-ui/core";
+import { Grid, Switch, alpha, makeStyles } from "@material-ui/core";
 
 import { formatAlarmTime } from "./utils";
 
@@ -8,6 +8,10 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "8px",
     background: alpha(theme.palette.primary.light, 0.15),
     boxShadow: `0 2px 1px 1px ${alpha(theme.palette.primary.light, 0.2)}`,
+  },
+  cardTop: {
+    display: "flex",
+    justifyContent: "space-between",
 
     "& > time": {
       fontSize: "1.5rem",
@@ -18,12 +22,15 @@ const useStyles = makeStyles((theme) => ({
 
 const AlarmItem = ({ alarmData }) => {
   const classes = useStyles();
-
+  console.log(alarmData);
   return (
     <div data-testid="alarm-item" className={classes.root}>
-      <time data-testid="alarm-item-time">
-        {formatAlarmTime(alarmData.time)}
-      </time>
+      <div className={classes.cardTop}>
+        <time data-testid="alarm-item-time">
+          {formatAlarmTime(alarmData.time)}
+        </time>
+        <Switch color="primary" checked={alarmData.isActive} />
+      </div>
     </div>
   );
 };
