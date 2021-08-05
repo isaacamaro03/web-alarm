@@ -1,4 +1,5 @@
-import { Grid, Switch, alpha, makeStyles } from "@material-ui/core";
+import { Switch, alpha, makeStyles } from "@material-ui/core";
+import { CustomChip } from "@web-alarm-components/shared/CustomChip";
 
 import { formatAlarmTime } from "./utils";
 
@@ -18,11 +19,16 @@ const useStyles = makeStyles((theme) => ({
       fontWeight: "500",
     },
   },
+  repetitionButtons: {
+    display: "flex",
+    gap: "4px",
+    marginTop: "16px",
+  },
 }));
 
 const AlarmItem = ({ alarmData }) => {
   const classes = useStyles();
-  console.log(alarmData);
+
   return (
     <div data-testid="alarm-item" className={classes.root}>
       <div className={classes.cardTop}>
@@ -30,6 +36,12 @@ const AlarmItem = ({ alarmData }) => {
           {formatAlarmTime(alarmData.time)}
         </time>
         <Switch color="primary" checked={alarmData.isActive} />
+      </div>
+      <div className={classes.repetitionButtons}>
+        <CustomChip selected>Once</CustomChip>
+        <CustomChip>Daily</CustomChip>
+        <CustomChip>Mon to Fri</CustomChip>
+        <CustomChip>Custom</CustomChip>
       </div>
     </div>
   );
