@@ -6,6 +6,8 @@ import RepetitionModel from "src/utils/models/repetitionModel";
 import { AddNewAlarmButton } from "./AddNewAlarmButton";
 import { AlarmList } from "./AlarmList";
 
+const uniqid = require("uniqid");
+
 const useStyles = makeStyles({
   root: {
     display: "flex",
@@ -21,7 +23,12 @@ const Main = () => {
   const onAddAlarmClick = () => {
     setAlarms((prev) => [
       ...prev,
-      { time: new Date(), isActive: true, repetition: RepetitionModel.once },
+      {
+        key: uniqid(),
+        time: new Date(),
+        isActive: true,
+        repetition: RepetitionModel.once,
+      },
     ]);
   };
 

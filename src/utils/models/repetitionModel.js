@@ -31,4 +31,25 @@ function getText(repetition) {
   return repetitionTexts[repetition];
 }
 
-export { repetitionTexts, getText };
+function getRepetitions() {
+  return [
+    RepetitionModel.once,
+    RepetitionModel.daily,
+    RepetitionModel.monToFri,
+    RepetitionModel.custom,
+  ];
+}
+
+function getCustomRepetitions() {
+  return [
+    RepetitionModel.monday,
+    RepetitionModel.tuesday,
+    RepetitionModel.wednesday,
+    RepetitionModel.thursday,
+    RepetitionModel.friday,
+    RepetitionModel.saturday,
+    RepetitionModel.sunday,
+  ];
+}
+
+export { repetitionTexts, getRepetitions, getCustomRepetitions, getText };

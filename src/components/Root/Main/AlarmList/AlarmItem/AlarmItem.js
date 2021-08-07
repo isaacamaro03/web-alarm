@@ -1,7 +1,8 @@
 import { Switch, alpha, makeStyles } from "@material-ui/core";
 import { CustomChip } from "@web-alarm-components/shared/CustomChip";
-import { getText } from "src/utils/models/repetitionModel";
+import { useState } from "react";
 
+import { ItemDetails } from "./ItemDetails";
 import { formatAlarmTime } from "./utils";
 
 const useStyles = makeStyles((theme) => ({
@@ -11,6 +12,7 @@ const useStyles = makeStyles((theme) => ({
     background: alpha(theme.palette.primary.light, 0.15),
     boxShadow: `-2px 3px 1px 1px ${alpha(theme.palette.primary.light, 0.2)}`,
   },
+  body: {},
   cardTop: {
     display: "flex",
     justifyContent: "space-between",
@@ -22,33 +24,40 @@ const useStyles = makeStyles((theme) => ({
   },
   cardBottom: {
     display: "flex",
-    justifyContent: "space-between",
-
-    "& > span": {
-      fontWeight: 500,
-    },
+    marginTop: ".5rem",
   },
   moreSettingsButton: {
-    marginTop: "1.5rem",
+    marginLeft: "auto",
   },
 }));
 
 const AlarmItem = ({ alarmData }) => {
   const classes = useStyles();
 
+  const [detailsExpanded, setDetailsExpanded] = useState(false);
+
+  const handleDetailsToggle = () => {
+    setDetailsExpanded(!detailsExpanded);
+  };
+
   return (
     <div data-testid="alarm-item" className={classes.root}>
-      <div className={classes.cardTop}>
-        <time data-testid="alarm-item-time">
-          {formatAlarmTime(alarmData.time)}
-        </time>
-        <Switch color="primary" checked={alarmData.isActive} />
-      </div>
-      <div className={classes.cardBottom}>
-        <span>{getText(alarmData.repetition)}</span>
-        <CustomChip className={classes.moreSettingsButton}>
-          More settings
-        </CustomChip>
+      <div className={classes.body}>
+        <div className={classes.cardTop}>
+          <time data-testid="alarm-item-time">
+            {formatAlarmTime(alarmData.time)}
+          </time>
+          <Switch color="primary" checked={alarmData.isActive} />
+        </div>
+        <ItemDetails alarmData={alarmData} expanded={detailsExpanded} />
+        <div className={classes.cardBottom}>
+          <CustomChip
+            className={classes.moreSettingsButton}
+            onClick={handleDetailsToggle}
+          >
+            {detailsExpanded ? "Hide settings" : "More settings"}
+          </CustomChip>
+        </div>
       </div>
     </div>
   );

@@ -43,7 +43,7 @@ const AlarmList = ({ alarms }) => {
       {alarms.length ? (
         <div className={classes.wrapper}>
           {alarms.map((alarm) => (
-            <AlarmItem alarmData={alarm} />
+            <AlarmItem key={alarm.key} alarmData={alarm} />
           ))}
         </div>
       ) : (
