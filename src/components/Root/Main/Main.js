@@ -3,7 +3,7 @@ import { AlarmsContext } from "@web-alarm-components/AlarmsContext";
 import { useContext } from "react";
 import RepetitionModel from "src/utils/models/repetitionModel";
 
-import { AddNewAlarmButton } from "./AddNewAlarmButton";
+import { AddAlarm } from "./AddAlarm";
 import { AlarmList } from "./AlarmList";
 
 const uniqid = require("uniqid");
@@ -35,7 +35,7 @@ const Main = () => {
   return (
     <main className={classes.root}>
       <AlarmList alarms={alarms} />
-      <AddNewAlarmButton onClick={onAddAlarmClick} />
+      <AddAlarm onItemAdd={onAddAlarmClick} />
     </main>
   );
 };
