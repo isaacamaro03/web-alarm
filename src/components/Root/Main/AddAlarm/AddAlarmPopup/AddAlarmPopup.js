@@ -2,21 +2,20 @@ import { alpha, makeStyles } from "@material-ui/core";
 import clsx from "clsx";
 import { CSSTransition } from "react-transition-group";
 
+import { TimeInputs } from "./TimeInputs";
+
 const useStyles = makeStyles((theme) => ({
   root: {
     background: alpha(theme.palette.secondary.main, 0.8),
-    transition: `width 140ms cubic-bezier(0.4, 0, 1, 1), height 180ms ease-out, box-shadow 140ms linear 180ms, border-radius 180ms cubic-bezier(0, 0, 0.2, 1)`,
+    transition: `width 140ms cubic-bezier(0.4, 0, 1, 1), height 180ms ease-out, box-shadow 140ms linear 185ms, border-radius 180ms cubic-bezier(0, 0, 0.2, 1)`,
     position: "absolute",
     bottom: "28px",
     willChange: "width, height, border-radius, box-shadow",
-
-    "&, $open-exit-active": {
-      opacity: 0,
-      width: "56px",
-      height: "56px",
-      borderRadius: "50%",
-      boxShadow: theme.shadows[1],
-    },
+    opacity: 0,
+    width: "56px",
+    height: "56px",
+    borderRadius: "50%",
+    boxShadow: theme.shadows[1],
   },
   open: {
     "&-enter": {
@@ -33,6 +32,8 @@ const useStyles = makeStyles((theme) => ({
       opacity: 1,
     },
   },
+
+  body: {},
 }));
 
 const AddAlarmPopup = ({ open }) => {
@@ -40,7 +41,11 @@ const AddAlarmPopup = ({ open }) => {
 
   return (
     <CSSTransition in={open} timeout={180} classNames={classes.open}>
-      <div className={clsx(classes.root)}></div>
+      <div className={clsx(classes.root)}>
+        <div className={clsx(classes.body)}>
+          <TimeInputs />
+        </div>
+      </div>
     </CSSTransition>
   );
 };

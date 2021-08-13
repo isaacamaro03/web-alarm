@@ -10,7 +10,12 @@ const useStyles = makeStyles((theme) => ({
     "&:hover": {
       background: theme.palette.primary.dark,
     },
+    "& $icon": {
+      marginRight: ".5rem",
+      transition: "margin 80ms linear",
+    },
   },
+  icon: {},
 }));
 
 const AddAlarmButton = ({ activated, onClick }) => {
@@ -23,7 +28,7 @@ const AddAlarmButton = ({ activated, onClick }) => {
       onClick={onClick}
       variant={activated ? "extended" : "circular"}
     >
-      <Add />
+      <Add className={classes.icon} />
       {activated ? "Criar" : ""}
     </Fab>
   );
