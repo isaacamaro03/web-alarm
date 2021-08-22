@@ -1,4 +1,4 @@
-import { alpha, makeStyles } from "@material-ui/core";
+import { Fade, Grow, alpha, makeStyles } from "@material-ui/core";
 import clsx from "clsx";
 import { CSSTransition } from "react-transition-group";
 
@@ -32,8 +32,6 @@ const useStyles = makeStyles((theme) => ({
       opacity: 1,
     },
   },
-
-  body: {},
 }));
 
 const AddAlarmPopup = ({ open }) => {
@@ -42,9 +40,11 @@ const AddAlarmPopup = ({ open }) => {
   return (
     <CSSTransition in={open} timeout={180} classNames={classes.open}>
       <div className={clsx(classes.root)}>
-        <div className={clsx(classes.body)}>
-          <TimeInputs />
-        </div>
+        <Grow in={open} timeout={140}>
+          <div className={clsx(classes.body)}>
+            <TimeInputs />
+          </div>
+        </Grow>
       </div>
     </CSSTransition>
   );
