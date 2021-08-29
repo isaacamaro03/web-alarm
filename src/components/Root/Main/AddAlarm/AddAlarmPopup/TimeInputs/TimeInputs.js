@@ -1,10 +1,8 @@
 import { makeStyles } from "@material-ui/core";
-import { useState } from "react";
 
 const useStyles = makeStyles({
   root: {
     display: "flex",
-    padding: "1rem",
     gap: ".5rem",
   },
 
@@ -33,28 +31,58 @@ const useStyles = makeStyles({
 
     "& span": {
       padding: ".25rem",
+      borderRadius: "inherit",
+      cursor: "pointer",
 
-      "&:hover": {
+      "&[active=true]": {
         background: "hsl(0 0% 100% / .6)",
-        borderRadius: "inherit",
-        cursor: "pointer",
+      },
+      "&:hover": {
+        background: "hsl(0 0% 100% / .7)",
       },
     },
   },
 });
 
-const TimeInputs = () => {
+const TimeInputs = ({
+  hour,
+  minute,
+  period,
+  onHourChange,
+  onMinuteChange,
+  onPeriodActive,
+}) => {
   const classes = useStyles();
-  const [hour, setHour] = useState("00");
-  const [minute, setMinute] = useState("00");
+
+  const handlePeriodClick = (period) => {
+    typeof onPeriodActive === "function" && onPeriodActive(period);
+  };
 
   return (
     <div className={classes.root}>
-      <input value={hour} className={classes.timeInput}></input>
-      <input value={minute} className={classes.timeInput}></input>
+      <input
+        value={hour}
+        className={classes.timeInput}
+        onChange={onHourChange}
+      ></input>
+      <input
+        value={minute}
+        className={classes.timeInput}
+        onChange={onMinuteChange}
+      ></input>
       <div className={classes.timePeriodsBox}>
-        <span>AM</span>
-        <span>PM</span>
+        <span
+          active={(period === "am").toString()}
+          onClick={() => handlePeriodClick("am")}
+        >
+          AM
+        </span>
+        <span
+          active={(period === "pm").toString()}
+          onClick={() => handlePeriodClick("pm")}
+        >
+          PM
+        </span>
       </div>
     </div>
   );

@@ -8,13 +8,13 @@ const customChipClasses = {
 const useStyles = makeStyles((theme) => ({
   root: {
     borderRadius: "16px",
-    backgroundColor: "hsl(354 0% 55% / .5)",
+    backgroundColor: "hsl(0 0% 100% / .1)",
 
     [`&:hover:not(.${customChipClasses.selected})`]: {
-      backgroundColor: "hsl(354 0% 55% / .5)",
+      backgroundColor: "hsl(0 0% 100% / .3)",
     },
     [`&.${customChipClasses.selected}`]: {
-      backgroundColor: theme.palette.primary.main,
+      backgroundColor: "hsl(0 0% 100% / .4)",
     },
   },
 }));
