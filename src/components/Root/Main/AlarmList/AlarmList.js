@@ -8,7 +8,8 @@ const useStyles = makeStyles({
     flexFlow: "column",
     flex: 1,
     marginBottom: "3rem",
-    overflow: "auto",
+    overflowY: "scroll",
+    paddingLeft: ".5rem",
 
     "& > img": {
       margin: "auto 0",

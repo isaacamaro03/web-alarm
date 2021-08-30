@@ -12,13 +12,16 @@ const useStyles = makeStyles({
   },
 });
 
-const RepeatInputs = () => {
+const RepeatInputs = ({ repetition, onRepetitionChange }) => {
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
       <Typography className={classes.title}>Repeat</Typography>
-      <RepetitionItems repetition={"once"} />
+      <RepetitionItems
+        repetition={repetition}
+        onRepetitionChange={onRepetitionChange}
+      />
     </div>
   );
 };

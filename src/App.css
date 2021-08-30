@@ -27,3 +27,8 @@ a {
 ::-webkit-scrollbar-thumb:window-inactive {
 	background: hsl(353deg 20% 40%); 
 }
+
+::-webkit-scrollbar-button {
+	background: transparent;
+    height: 0;
+}

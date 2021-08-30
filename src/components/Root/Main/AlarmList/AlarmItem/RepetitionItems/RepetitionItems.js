@@ -11,15 +11,25 @@ const useStyles = makeStyles({
   },
 });
 
-const RepetitionItems = ({ repetition }) => {
+const RepetitionItems = ({ repetition, onRepetitionChange }) => {
   const classes = useStyles();
 
   const repetitions = getRepetitions();
 
+  const handleRepetitionClick = (repName) => {
+    if (repetition !== repName) {
+      typeof onRepetitionChange === "function" && onRepetitionChange(repName);
+    }
+  };
+
   return (
     <div className={classes.root}>
       {repetitions.map((repName) => (
-        <CustomChip key={repName} selected={repName === repetition}>
+        <CustomChip
+          key={repName}
+          selected={repName === repetition}
+          onClick={() => handleRepetitionClick(repName)}
+        >
           {getText(repName)}
         </CustomChip>
       ))}

@@ -1,7 +1,6 @@
 import { makeStyles } from "@material-ui/core";
 import { AlarmsContext } from "@web-alarm-components/AlarmsContext";
 import { useContext } from "react";
-import RepetitionModel from "src/utils/models/repetitionModel";
 
 import { AddAlarm } from "./AddAlarm";
 import { AlarmList } from "./AlarmList";
@@ -20,14 +19,14 @@ const Main = () => {
   const classes = useStyles();
   const [alarms, setAlarms] = useContext(AlarmsContext);
 
-  const onAddAlarmClick = () => {
+  const onAddAlarmClick = ({ time, repetition }) => {
     setAlarms((prev) => [
       ...prev,
       {
         key: uniqid(),
-        time: new Date(),
+        time: time,
         isActive: true,
-        repetition: RepetitionModel.once,
+        repetition: repetition,
       },
     ]);
   };

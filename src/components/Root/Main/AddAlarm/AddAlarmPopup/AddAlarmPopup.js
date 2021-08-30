@@ -1,11 +1,9 @@
 import { Grow, alpha, makeStyles } from "@material-ui/core";
 import clsx from "clsx";
-import { useEffect, useState } from "react";
 import { CSSTransition } from "react-transition-group";
 
 import RepeatInputs from "./RepeatInputs/RepeatInputs";
 import { TimeInputs } from "./TimeInputs";
-import { padNumber } from "./TimeInputs/utils";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -40,37 +38,23 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const AddAlarmPopup = ({ open }) => {
+const AddAlarmPopup = ({
+  open,
+  hour,
+  minute,
+  period,
+  repetition,
+  onHourChange,
+  onMinuteChange,
+  onPeriodActive,
+  onRepetitionChange,
+}) => {
   const classes = useStyles();
-
-  const [hour, setHour] = useState();
-  const [minute, setMinute] = useState();
-  const [period, setPeriod] = useState();
-
-  useEffect(() => {
-    const startDate = new Date();
-    const hours = startDate.getHours();
-
-    setPeriod(hours > 12 ? "pm" : "am");
-
-    setHour(padNumber(hours % 12 || hours));
-    setMinute(padNumber(startDate.getMinutes()));
-  }, []);
-
-  const onHourChange = (e) => {
-    setHour(e.target.value);
-  };
-  const onMinuteChange = (e) => {
-    setMinute(e.target.value);
-  };
-  const onPeriodActive = (period) => {
-    setPeriod(period);
-  };
 
   return (
     <CSSTransition in={open} timeout={180} classNames={classes.open}>
       <div className={clsx(classes.root)}>
-        <Grow in={open} timeout={140}>
+        <Grow in={open} timeout={open ? 440 : 120}>
           <div className={clsx(classes.body)}>
             <TimeInputs
               hour={hour}
@@ -80,7 +64,10 @@ const AddAlarmPopup = ({ open }) => {
               onMinuteChange={onMinuteChange}
               onPeriodActive={onPeriodActive}
             />
-            <RepeatInputs />
+            <RepeatInputs
+              repetition={repetition}
+              onRepetitionChange={onRepetitionChange}
+            />
           </div>
         </Grow>
       </div>
