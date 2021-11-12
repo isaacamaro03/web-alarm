@@ -5,12 +5,12 @@ import { useState } from "react";
 import { ItemDetails } from "./ItemDetails";
 import { formatAlarmTime } from "./utils";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   root: {
     padding: ".5rem",
     borderRadius: "8px",
-    background: alpha(theme.palette.primary.light, 0.15),
-    boxShadow: `-2px 3px 1px 1px ${alpha(theme.palette.primary.light, 0.2)}`,
+    background: alpha(theme.palette.primary.light, 0.4),
+    boxShadow: `-2px 3px 1px 1px ${alpha(theme.palette.primary.light, 0.2)}`
   },
   body: {},
   cardTop: {
@@ -19,16 +19,16 @@ const useStyles = makeStyles((theme) => ({
 
     "& > time": {
       fontSize: "1.5rem",
-      fontWeight: "500",
-    },
+      fontWeight: "500"
+    }
   },
   cardBottom: {
     display: "flex",
-    marginTop: ".5rem",
+    marginTop: ".5rem"
   },
   moreSettingsButton: {
-    marginLeft: "auto",
-  },
+    marginLeft: "auto"
+  }
 }));
 
 const AlarmItem = ({ alarmData }) => {

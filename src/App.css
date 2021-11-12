@@ -1,34 +1,41 @@
-html, body, #root {
-    height: 100%;
-    overflow: hidden;
+html,
+body,
+#root {
+  height: 100%;
+  overflow: hidden;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    margin: 0;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 ::-webkit-scrollbar {
-    width: 8px;
+  width: 8px;
 }
- 
+
 ::-webkit-scrollbar-track {
-    border-radius: 8px;
+  border-radius: 8px;
 }
- 
+
 ::-webkit-scrollbar-thumb {
-    border-radius: 8px;
-    background: hsl(353deg 20% 40%); 
+  border-radius: 8px;
+  background: hsl(353deg 20% 40%);
 }
 
 ::-webkit-scrollbar-thumb:window-inactive {
-	background: hsl(353deg 20% 40%); 
+  background: hsl(353deg 20% 40%);
 }
 
 ::-webkit-scrollbar-button {
-	background: transparent;
-    height: 0;
+  background: transparent;
+  height: 0;
 }

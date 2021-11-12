@@ -6,38 +6,38 @@ const defaultTheme = createTheme({
     MuiCssBaseline: {
       "@global": {
         body: {
-          color: "hsl(353deg 20% 40%)",
-        },
-      },
+          color: "hsla(37, 100%, 98%, 0.93)"
+        }
+      }
     },
     MuiPaper: {
       rounded: {
-        borderRadius: "8px",
-      },
+        borderRadius: "8px"
+      }
     },
     MuiButton: {
       root: {
         textTransform: "none",
         borderRadius: "8px",
-        lineHeight: "1.25rem",
-      },
-    },
+        lineHeight: "1.25rem"
+      }
+    }
   },
   palette: {
     background: {
-      default: "hsla(0, 50%, 96%, 1)",
-      paper: "hsla(0, 50%, 96%, 1)",
+      default: "hsla(37, 10%, 9%, 1)",
+      paper: "hsla(37, 10%, 9%, 1)"
     },
     primary: {
-      main: "hsl(354, 89%, 55%)",
+      main: "hsla(37, 100%, 65%, 1)"
     },
     secondary: {
-      main: "hsl(231, 88%, 58%)",
-    },
+      main: "hsla(37, 29%, 70%, 0.99)"
+    }
   },
   typography: {
-    fontFamily: ["system-ui", "sans-serif"].join(","),
-  },
+    fontFamily: ["system-ui", "sans-serif"].join(",")
+  }
 });
 
 const ThemeProvider = ({ children }) => {

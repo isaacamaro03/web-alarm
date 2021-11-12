@@ -12,15 +12,18 @@ const useStyles = makeStyles({
     paddingLeft: ".5rem",
 
     "& > img": {
-      margin: "auto 0",
-    },
+      margin: "auto 0"
+    }
   },
   wrapper: {
     display: "flex",
     flexFlow: "column",
     gap: "1rem",
-    padding: "0 .25rem .25rem .25rem",
+    padding: "0 .25rem .25rem .25rem"
   },
+  noAlarmsTitle: {
+    margin: "auto"
+  }
 });
 
 const AlarmList = ({ alarms }) => {
@@ -28,14 +31,7 @@ const AlarmList = ({ alarms }) => {
 
   const EmptyListIllustration = () => {
     return (
-      <img
-        src={
-          process.env.NODE_ENV === "development"
-            ? "./web-alarm/clock_illustration.svg"
-            : "./clock_illustration.svg"
-        }
-        alt="a clock to serve as a space filler when there's no alarms configured"
-      />
+      <h2 className={classes.noAlarmsTitle}>No alarms configured for you</h2>
     );
   };
 
@@ -43,7 +39,7 @@ const AlarmList = ({ alarms }) => {
     <div className={classes.root}>
       {alarms.length ? (
         <div className={classes.wrapper}>
-          {alarms.map((alarm) => (
+          {alarms.map(alarm => (
             <AlarmItem key={alarm.key} alarmData={alarm} />
           ))}
         </div>

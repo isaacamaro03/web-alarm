@@ -2,32 +2,32 @@ import { Typography, makeStyles } from "@material-ui/core";
 
 import { Clock } from "./Clock";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   root: {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    fontWeight: "300",
+    fontWeight: "300"
   },
   titleWrapper: {
     display: "inline-block",
-    fontWeight: "500",
+    fontWeight: "500"
   },
   descWrapper: {
     "& > span": {
-      fontSize: ".8rem",
+      fontSize: ".8rem"
     },
     "& > a": {
       fontSize: ".8rem",
       marginLeft: ".25rem",
       fontWeight: "bold",
-      color: theme.palette.primary.dark,
-    },
+      color: theme.palette.primary.dark
+    }
   },
   title: {
     fontSize: "2rem",
-    fontWeight: "500",
-  },
+    fontWeight: "500"
+  }
 }));
 
 const Header = () => {
@@ -39,17 +39,6 @@ const Header = () => {
         <Typography variant="h1" className={classes.title}>
           web-alarm
         </Typography>
-        <div className={classes.descWrapper}>
-          <span>designed by</span>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://github.com/isaacamaro03"
-            data-testid="author-link"
-          >
-            Isaac Amaro
-          </a>
-        </div>
       </div>
       <Clock startDate={new Date()} />
     </header>
